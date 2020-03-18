@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="1" ></p>
+<input type="button" value="player1" onclick="player1()"><br>
+<input type="button" value="player2" onclick="player2()"><br>
+
+<script>
+    let b = document.getElementById("1");
+
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = [".", ".",".", ".", "."];
+    }
+
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    b.innerHTML = data;
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    function player1() {
+        let positionX = Number(prompt("X: "));
+        let positionY = Number(prompt("Y: "));
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = data;
+        if((board[positionX+1][positionY] === "x")&&(board[positionX-1][positionY] === "x")){
+            alert("player 1 thang");
+        }
+        if((board[positionX+1][positionY] === "x")&&(board[positionX+2][positionY] === "x")){
+            alert("player 1 thang");
+        }if((board[positionX-1][positionY] === "x")&&(board[positionX-2][positionY] === "x")){
+            alert("player 1 thang");
+        }
+        if((board[positionX][positionY+1] === "x")&&(board[positionX][positionY-1] === "x")){
+            alert("player 1 thang");
+        }
+        if((board[positionX][positionY+1] === "x")&&(board[positionX][positionY+2] === "x")){
+            alert("player 1 thang");
+        }if((board[positionX][positionY-1] === "x")&&(board[positionX][positionY-2] === "x")){
+            alert("player 1 thang");
+        }
+        if((board[positionX+1][positionY+1] === "x")&&(board[positionX-1][positionY-1] === "x")){
+            alert("player 1 thang");
+        }
+        if((board[positionX+1][positionY+1] === "x")&&(board[positionX+2][positionY+2] === "x")){
+            alert("player 1 thang");
+        }if((board[positionX-1][positionY-1] === "x")&&(board[positionX-2][positionY-2] === "x")){
+            alert("player 1 thang");
+        }
+    }
+    function player2() {
+        let positionX = Number(prompt("X: "));
+        let positionY = Number(prompt("Y: "));
+        data = "";
+        board[positionX][positionY] = "o";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = data;
+        if((board[positionX+1][positionY] === "o")&&(board[positionX-1][positionY] === "o")){
+            alert("player 2 thang");
+        }
+        if((board[positionX+1][positionY] === "o")&&(board[positionX+2][positionY] === "o")){
+            alert("player 2 thang");
+        }if((board[positionX-1][positionY] === "o")&&(board[positionX-2][positionY] === "o")){
+            alert("player 2 thang");
+        }
+        if((board[positionX][positionY+1] === "o")&&(board[positionX][positionY-1] === "o")){
+            alert("player 2 thang");
+        }
+        if((board[positionX][positionY+1] === "o")&&(board[positionX][positionY+2] === "o")){
+            alert("player 2 thang");
+        }if((board[positionX][positionY-1] === "o")&&(board[positionX][positionY-2] === "o")){
+            alert("player 2 thang");
+        }
+        if((board[positionX+1][positionY+1] === "o")&&(board[positionX-1][positionY-1] === "o")){
+            alert("player 2 thang");
+        }
+        if((board[positionX+1][positionY+1] === "o")&&(board[positionX+2][positionY+2] === "o")){
+            alert("player 2 thang");
+        }if((board[positionX-1][positionY-1] === "o")&&(board[positionX-2][positionY-2] === "o")){
+            alert("player 2 thang");
+        }
+    }
+
+</script>
+</body>
+</html>
